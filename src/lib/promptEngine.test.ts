@@ -46,6 +46,12 @@ describe('renderPrompt', () => {
     expect(a).toBe(b)
   })
 
+  it('places exactly one blank line between sections in stripMarkers output', () => {
+    const out = renderPrompt(fullData, { stripMarkers: true })
+    expect(out).not.toMatch(/\n{3,}/)
+    expect(out).toMatch(/## Purpose[\s\S]*?\n\n## Target User/)
+  })
+
   it('produces no orphan or duplicate markers', () => {
     const out = renderPrompt(fullData)
     const startCount = (out.match(/<!-- section:[a-z-]+:start -->/g) ?? []).length

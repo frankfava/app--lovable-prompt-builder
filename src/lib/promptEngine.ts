@@ -26,8 +26,8 @@ function endMarker(id: SectionId): string {
   return `<!-- section:${id}:end -->`
 }
 
-function joinNonEmpty(lines: string[]): string {
-  return lines.filter((l) => l.trim().length > 0).join('\n')
+function joinSections(blocks: string[]): string {
+  return blocks.filter((b) => b.trim().length > 0).join('\n\n')
 }
 
 const SECTIONS: readonly SectionDef[] = [
@@ -179,7 +179,7 @@ export function renderPrompt(data: WizardData, opts: RenderOptions = {}): string
     }
   }
 
-  return joinNonEmpty(blocks).split('\n').join('\n').trim() + '\n'
+  return joinSections(blocks).trim() + '\n'
 }
 
 export interface ParsedRegion {
