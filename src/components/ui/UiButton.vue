@@ -33,9 +33,9 @@ const variantClasses: Record<Variant, string> = {
   primary:
     'bg-lovable-gradient text-white shadow-lovable hover:brightness-110 active:brightness-95',
   secondary:
-    'bg-white text-lovable-ink border border-lovable-purple/30 hover:border-lovable-purple/60 hover:bg-lovable-gradient-soft',
+    'bg-white text-lovable-ink border border-lovable-purple/30 hover:border-lovable-purple/60 hover:bg-lovable-gradient-soft dark:bg-slate-800 dark:text-slate-100 dark:border-lovable-pink/40 dark:hover:border-lovable-pink/70',
   ghost:
-    'bg-transparent text-lovable-ink hover:bg-slate-100',
+    'bg-transparent text-lovable-ink hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-slate-800',
 }
 
 const classes = computed(() =>

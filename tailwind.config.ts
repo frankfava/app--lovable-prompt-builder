@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 
 export default {
   content: ['./index.html', './src/**/*.{vue,ts}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -14,6 +15,8 @@ export default {
           peach: '#FDBA74',
           ink: '#0F172A',
           cloud: '#F8FAFC',
+          night: '#0B0F1A',
+          midnight: '#070A12',
         },
       },
       backgroundImage: {

@@ -22,7 +22,7 @@ const classes = computed(() =>
     'disabled:opacity-50 disabled:cursor-not-allowed',
     props.selected
       ? 'bg-lovable-gradient text-white shadow-sm'
-      : 'bg-white text-lovable-ink border border-slate-200 hover:border-lovable-purple/50',
+      : 'bg-white text-lovable-ink border border-slate-200 hover:border-lovable-purple/50 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700 dark:hover:border-lovable-pink/60',
   ].join(' ')
 )
 </script>

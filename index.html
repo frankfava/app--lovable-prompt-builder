@@ -11,6 +11,20 @@
       rel="stylesheet"
     />
     <title>Lovable Prompt Builder</title>
+    <script>
+      // Pre-paint theme guard — runs before Vue mounts to avoid FOUC.
+      (function () {
+        try {
+          var stored = localStorage.getItem('lpb:theme');
+          var dark =
+            stored === 'dark' ||
+            (stored !== 'light' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (_) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>

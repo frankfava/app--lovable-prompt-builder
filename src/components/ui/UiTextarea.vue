@@ -29,7 +29,7 @@ const describedBy = computed(() =>
     <label
       v-if="label"
       :for="fieldId"
-      class="text-sm font-semibold text-lovable-ink"
+      class="text-sm font-semibold text-lovable-ink dark:text-slate-100"
     >
       {{ label }}
     </label>
@@ -41,15 +41,15 @@ const describedBy = computed(() =>
       :disabled="disabled"
       :aria-invalid="!!error || undefined"
       :aria-describedby="describedBy"
-      class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base text-lovable-ink placeholder:text-slate-400 transition focus:border-lovable-purple focus:outline-none focus:ring-2 focus:ring-lovable-purple/30 disabled:opacity-60 resize-y"
+      class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base text-lovable-ink placeholder:text-slate-400 transition focus:border-lovable-purple focus:outline-none focus:ring-2 focus:ring-lovable-purple/30 disabled:opacity-60 resize-y dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-lovable-pink dark:focus:ring-lovable-pink/30"
       :class="{ 'border-rose-400 focus:border-rose-500 focus:ring-rose-300/40': !!error }"
       @input="
         (e) =>
           $emit('update:modelValue', (e.target as HTMLTextAreaElement).value)
       "
     />
-    <p v-if="error" :id="errorId" class="text-sm text-rose-600">{{ error }}</p>
-    <p v-else-if="helper" :id="helperId" class="text-sm text-slate-500">
+    <p v-if="error" :id="errorId" class="text-sm text-rose-600 dark:text-rose-400">{{ error }}</p>
+    <p v-else-if="helper" :id="helperId" class="text-sm text-slate-500 dark:text-slate-400">
       <slot name="helper">{{ helper }}</slot>
     </p>
   </div>

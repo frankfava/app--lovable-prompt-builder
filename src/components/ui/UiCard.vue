@@ -10,7 +10,7 @@ withDefaults(
 
 <template>
   <section
-    class="rounded-3xl border border-slate-200/80 bg-white"
+    class="rounded-3xl border border-slate-200/80 bg-white dark:border-slate-800 dark:bg-slate-900"
     :class="[padded ? 'p-6' : '', elevated ? 'shadow-lovable' : 'shadow-sm']"
   >
     <header v-if="$slots.header" class="mb-4">
