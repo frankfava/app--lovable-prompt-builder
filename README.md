@@ -70,6 +70,8 @@ The launcher opens `https://lovable.dev/?autosubmit=true#prompt=<url-encoded>` i
 
 Built to make starting a new [Lovable](https://lovable.dev) project feel less like staring at a blank box.
 
+Co-authored by **[\frankfava](https://github.com/frankfava)** and **Claude** (Anthropic) using the [`/create-mvp` command](https://github.com/frankfava/ai-skill--create-mvp)
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).
