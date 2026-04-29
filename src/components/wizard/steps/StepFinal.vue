@@ -3,6 +3,9 @@ import { computed } from 'vue'
 import StepContainer from '../StepContainer.vue'
 import UiTextarea from '../../ui/UiTextarea.vue'
 import UiButton from '../../ui/UiButton.vue'
+import CopyButton from '../../output/CopyButton.vue'
+import DownloadButton from '../../output/DownloadButton.vue'
+import BuildWithLovableButton from '../../output/BuildWithLovableButton.vue'
 import { useWizardStore } from '../../../stores/wizard'
 import { DEFAULT_WHAT_TO_DO_FIRST } from '../../../types/wizard'
 
@@ -46,11 +49,10 @@ function resetToDefault() {
       </UiButton>
     </div>
 
-    <div
-      class="rounded-2xl border border-dashed border-slate-300 px-4 py-4 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400"
-    >
-      Copy / Download / Build with Lovable buttons land in the next phase. For now,
-      use the preview pane on the right.
+    <div class="flex flex-col gap-3 sm:flex-row sm:gap-2">
+      <CopyButton />
+      <DownloadButton />
+      <BuildWithLovableButton />
     </div>
   </StepContainer>
 </template>

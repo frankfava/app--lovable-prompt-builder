@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import CopyButton from '../output/CopyButton.vue'
+import DownloadButton from '../output/DownloadButton.vue'
+import BuildWithLovableButton from '../output/BuildWithLovableButton.vue'
 import { useWizardStore } from '../../stores/wizard'
 import { renderPrompt } from '../../lib/promptEngine'
 
@@ -62,5 +65,15 @@ const isEmptyShape = computed(() => {
       v-else
       class="flex-1 overflow-auto whitespace-pre-wrap rounded-2xl border border-slate-200 bg-white p-5 font-mono text-sm leading-relaxed text-lovable-ink dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-200"
     ><code>{{ renderedDisplay }}</code></pre>
+
+    <!-- Actions bar: shown on desktop when prompt is not empty -->
+    <div
+      v-if="!isEmptyShape"
+      class="hidden gap-2 border-t border-slate-200 px-0 pt-4 dark:border-slate-800 md:flex"
+    >
+      <CopyButton />
+      <DownloadButton />
+      <BuildWithLovableButton />
+    </div>
   </div>
 </template>
