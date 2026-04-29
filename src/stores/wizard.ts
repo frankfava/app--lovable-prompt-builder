@@ -6,44 +6,44 @@ import type {
   WizardStep,
   StepDataMap,
 } from '../types/wizard'
-import { EMPTY_WIZARD_DATA } from '../types/wizard'
+import { EMPTY_WIZARD_DATA, STEP_SKIP_DEFAULTS } from '../types/wizard'
 
 const STEPS: readonly WizardStep[] = [
   {
     id: 'basics',
     title: 'The Basics',
     blurb: 'What you\'re building, who it\'s for, and the one-liner that sells it.',
-    defaults: EMPTY_WIZARD_DATA.basics,
+    defaults: STEP_SKIP_DEFAULTS.basics,
   },
   {
     id: 'design',
     title: 'Design Direction',
     blurb: 'Pick a vibe. Lovable speaks fluent buzzword.',
-    defaults: EMPTY_WIZARD_DATA.design,
+    defaults: STEP_SKIP_DEFAULTS.design,
   },
   {
     id: 'pages',
     title: 'Pages & Routes',
     blurb: 'The screens that matter on day one.',
-    defaults: EMPTY_WIZARD_DATA.pages,
+    defaults: STEP_SKIP_DEFAULTS.pages,
   },
   {
     id: 'features',
     title: 'Features & Data',
     blurb: 'The MVP feature list and the entities behind them.',
-    defaults: EMPTY_WIZARD_DATA.features,
+    defaults: STEP_SKIP_DEFAULTS.features,
   },
   {
     id: 'backend',
     title: 'Backend & Constraints',
     blurb: 'Auth, database, storage, and the rules of the road.',
-    defaults: EMPTY_WIZARD_DATA.backend,
+    defaults: STEP_SKIP_DEFAULTS.backend,
   },
   {
     id: 'final',
     title: 'Final Touches',
     blurb: 'How Lovable should kick things off.',
-    defaults: EMPTY_WIZARD_DATA.final,
+    defaults: STEP_SKIP_DEFAULTS.final,
   },
 ] as const
 

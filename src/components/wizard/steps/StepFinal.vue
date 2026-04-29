@@ -1,14 +1,56 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import StepContainer from '../StepContainer.vue'
+import UiTextarea from '../../ui/UiTextarea.vue'
+import UiButton from '../../ui/UiButton.vue'
+import { useWizardStore } from '../../../stores/wizard'
+import { DEFAULT_WHAT_TO_DO_FIRST } from '../../../types/wizard'
+
+const wizard = useWizardStore()
+
+const whatToDoFirst = computed({
+  get: () => wizard.data.final.whatToDoFirst,
+  set: (v: string) => wizard.setStepData('final', { whatToDoFirst: v }),
+})
+
+function resetToDefault() {
+  wizard.setStepData('final', { whatToDoFirst: DEFAULT_WHAT_TO_DO_FIRST })
+}
 </script>
 
 <template>
   <StepContainer
     title="Final Touches"
-    blurb="How Lovable should kick things off."
+    blurb="Look at you. Built different. Ship it."
   >
-    <p class="text-sm text-slate-500 dark:text-slate-400">
-      "What to do first" editor lands in Phase 5.
-    </p>
+    <div
+      class="rounded-3xl border border-lovable-purple/30 bg-lovable-gradient-soft p-5 text-lovable-ink dark:border-lovable-pink/40 dark:text-slate-100"
+    >
+      <p class="text-lg font-extrabold">Your prompt is ready ✨</p>
+      <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+        Last call: tell Lovable how to kick things off. The default below asks it to
+        clarify before writing code — usually the smart move.
+      </p>
+    </div>
+
+    <UiTextarea
+      v-model="whatToDoFirst"
+      label="What Lovable should do first"
+      :rows="5"
+      helper="Edit if you want a different opener. Otherwise the default is solid."
+    />
+
+    <div>
+      <UiButton variant="ghost" size="sm" @click="resetToDefault">
+        Reset to default
+      </UiButton>
+    </div>
+
+    <div
+      class="rounded-2xl border border-dashed border-slate-300 px-4 py-4 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400"
+    >
+      Copy / Download / Build with Lovable buttons land in the next phase. For now,
+      use the preview pane on the right.
+    </div>
   </StepContainer>
 </template>

@@ -125,3 +125,36 @@ export const EMPTY_WIZARD_DATA: WizardData = {
   },
   final: { whatToDoFirst: DEFAULT_WHAT_TO_DO_FIRST },
 }
+
+export const STEP_SKIP_DEFAULTS: WizardData = {
+  basics: {
+    appType: 'web app',
+    appName: '',
+    purpose: '',
+    targetUser: '',
+  },
+  design: {
+    styles: ['minimal'],
+    moods: ['confident'],
+    colors: '',
+    typography: 'Sans-serif everywhere',
+    layout: 'Top nav',
+    inspiration: '',
+  },
+  pages: {
+    pages: [
+      {
+        path: '/',
+        description: 'Landing page with hero, features, pricing, CTA',
+      },
+    ],
+  },
+  features: { features: [], entities: [] },
+  backend: {
+    auth: 'none',
+    database: 'none',
+    storage: '',
+    constraints: [...DEFAULT_CONSTRAINTS],
+  },
+  final: { whatToDoFirst: DEFAULT_WHAT_TO_DO_FIRST },
+}
