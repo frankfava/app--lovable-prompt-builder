@@ -122,6 +122,15 @@ export const useWizardStore = defineStore('wizard', () => {
     skipped.clear()
   }
 
+  function loadPreset(presetData: WizardData) {
+    Object.assign(data, deepClone(presetData))
+    currentStepIndex.value = 1
+    visited.clear()
+    visited.add('basics')
+    visited.add('design')
+    skipped.clear()
+  }
+
   return {
     steps,
     data,
@@ -141,5 +150,6 @@ export const useWizardStore = defineStore('wizard', () => {
     setStepData,
     skipStep,
     resetWizard,
+    loadPreset,
   }
 })

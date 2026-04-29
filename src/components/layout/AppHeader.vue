@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ThemeToggle from '../ui/ThemeToggle.vue'
+import UiButton from '../ui/UiButton.vue'
 
 withDefaults(
   defineProps<{
@@ -11,6 +12,10 @@ withDefaults(
     repoUrl: '',
   }
 )
+
+defineEmits<{
+  (e: 'open-preset-picker'): void
+}>()
 </script>
 
 <template>
@@ -40,6 +45,14 @@ withDefaults(
       </a>
 
       <nav class="flex items-center gap-2">
+        <UiButton
+          variant="secondary"
+          size="sm"
+          @click="$emit('open-preset-picker')"
+          class="hidden md:inline-flex"
+        >
+          Use a template
+        </UiButton>
         <a
           v-if="repoUrl"
           :href="repoUrl"
