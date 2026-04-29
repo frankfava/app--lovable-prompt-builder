@@ -6,20 +6,18 @@ defineSlots<{
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-7xl px-4 py-6 md:px-8 md:py-10">
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-      <section
-        aria-label="Wizard"
-        class="min-w-0"
-      >
-        <slot name="wizard" />
-      </section>
-      <aside
-        aria-label="Live prompt preview"
-        class="min-w-0 md:sticky md:top-24 md:self-start md:max-h-[calc(100vh-7rem)] md:overflow-y-auto"
-      >
-        <slot name="preview" />
-      </aside>
-    </div>
+  <div class="flex flex-1 min-h-0 flex-col md:flex-row">
+    <section
+      aria-label="Wizard"
+      class="flex-1 min-w-0 overflow-y-auto border-b border-slate-200 md:border-b-0 md:border-r"
+    >
+      <slot name="wizard" />
+    </section>
+    <aside
+      aria-label="Live prompt preview"
+      class="flex-1 min-w-0 overflow-y-auto bg-slate-50/60"
+    >
+      <slot name="preview" />
+    </aside>
   </div>
 </template>
