@@ -31,7 +31,7 @@ const sizeClasses: Record<Size, string> = {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-lovable-gradient text-white shadow-lovable hover:brightness-110 active:brightness-95',
+    'bg-lovable-gradient text-white shadow-lovable hover:brightness-110 active:brightness-95 dark:bg-lovable-gradient-muted',
   secondary:
     'bg-white text-lovable-ink border border-lovable-purple/30 hover:border-lovable-purple/60 hover:bg-lovable-gradient-soft dark:bg-slate-800 dark:text-slate-100 dark:border-lovable-pink/40 dark:hover:border-lovable-pink/70',
   ghost:

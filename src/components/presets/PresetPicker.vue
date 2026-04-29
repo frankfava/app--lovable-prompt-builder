@@ -63,7 +63,7 @@ defineExpose({
         >
           <!-- Header -->
           <div class="sticky top-0 border-b border-slate-200 bg-white px-6 py-6 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100">
-            <h2 class="text-3xl font-bold bg-lovable-gradient bg-clip-text text-transparent">
+            <h2 class="text-3xl font-bold bg-lovable-gradient bg-clip-text text-transparent dark:bg-lovable-gradient-bright">
               Pick a starter template
             </h2>
             <p class="mt-2 text-slate-600 dark:text-slate-400">

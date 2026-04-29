@@ -21,7 +21,7 @@ const classes = computed(() =>
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-lovable-purple/60 focus-visible:ring-offset-2',
     'disabled:opacity-50 disabled:cursor-not-allowed',
     props.selected
-      ? 'bg-lovable-gradient text-white shadow-sm'
+      ? 'bg-lovable-gradient text-white shadow-sm dark:bg-lovable-gradient-muted'
       : 'bg-white text-lovable-ink border border-slate-200 hover:border-lovable-purple/50 dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700 dark:hover:border-lovable-pink/60',
   ].join(' ')
 )

@@ -27,14 +27,14 @@ defineEmits<{
     >
       <a href="/" class="flex items-center gap-3 group">
         <span
-          class="flex h-9 w-9 items-center justify-center rounded-2xl bg-lovable-gradient text-white text-lg shadow-lovable transition group-hover:rotate-3"
+          class="flex h-9 w-9 items-center justify-center rounded-2xl bg-lovable-gradient text-white text-lg shadow-lovable transition group-hover:rotate-3 dark:bg-lovable-gradient-muted"
           aria-hidden="true"
         >
           ✨
         </span>
         <span class="flex flex-col leading-tight">
           <span
-            class="bg-lovable-gradient bg-clip-text text-lg font-extrabold text-transparent md:text-xl"
+            class="bg-lovable-gradient bg-clip-text text-lg font-extrabold text-transparent dark:bg-lovable-gradient-bright md:text-xl"
           >
             Lovable Prompt Builder
           </span>
@@ -65,7 +65,7 @@ defineEmits<{
         <span
           class="inline-flex rounded-full border border-lovable-purple/30 bg-lovable-gradient-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-lovable-violet dark:border-lovable-pink/40 dark:text-lovable-pink"
         >
-          v0 · MVP
+          v1
         </span>
         <ThemeToggle />
       </nav>

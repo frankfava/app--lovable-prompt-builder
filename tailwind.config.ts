@@ -22,6 +22,10 @@ export default {
       backgroundImage: {
         'lovable-gradient':
           'linear-gradient(135deg, #FF66C4 0%, #A855F7 50%, #FB923C 100%)',
+        'lovable-gradient-bright':
+          'linear-gradient(135deg, #FFB3DE 0%, #FDBA74 100%)',
+        'lovable-gradient-muted':
+          'linear-gradient(135deg, #C75BA0 0%, #8047CC 100%)',
         'lovable-gradient-soft':
           'linear-gradient(135deg, rgba(255,102,196,0.12) 0%, rgba(168,85,247,0.10) 50%, rgba(251,146,60,0.12) 100%)',
       },

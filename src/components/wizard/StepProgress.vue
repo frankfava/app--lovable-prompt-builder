@@ -17,7 +17,7 @@ const wizard = useWizardStore()
 
     <div class="h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
       <div
-        class="h-full rounded-full bg-lovable-gradient transition-all duration-300"
+        class="h-full rounded-full bg-lovable-gradient transition-all duration-300 dark:bg-lovable-gradient-muted"
         :style="{ width: `${wizard.progressPct}%` }"
       />
     </div>
@@ -31,7 +31,7 @@ const wizard = useWizardStore()
           class="rounded-full border px-2.5 py-1 text-xs font-medium transition disabled:cursor-not-allowed disabled:opacity-50"
           :class="
             idx === wizard.currentStepIndex
-              ? 'border-transparent bg-lovable-gradient text-white shadow-sm'
+              ? 'border-transparent bg-lovable-gradient text-white shadow-sm dark:bg-lovable-gradient-muted'
               : wizard.visited.has(step.id)
               ? 'border-lovable-purple/40 text-lovable-violet hover:border-lovable-purple dark:border-lovable-pink/40 dark:text-lovable-pink dark:hover:border-lovable-pink'
               : 'border-slate-200 text-slate-400 dark:border-slate-700 dark:text-slate-500'
