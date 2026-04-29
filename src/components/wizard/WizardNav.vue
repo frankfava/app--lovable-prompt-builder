@@ -17,17 +17,12 @@ const wizard = useWizardStore()
     </UiButton>
 
     <div class="flex flex-wrap items-center gap-3">
-      <UiSkipButton @skip="wizard.skipStep(wizard.currentStep.id)" />
-      <UiButton
-        v-if="!wizard.isLast"
-        variant="primary"
-        @click="wizard.goNext()"
-      >
-        Next →
-      </UiButton>
-      <UiButton v-else variant="primary" @click="wizard.goNext()">
-        Finish ✨
-      </UiButton>
+      <template v-if="!wizard.isLast">
+        <UiSkipButton @skip="wizard.skipStep(wizard.currentStep.id)" />
+        <UiButton variant="primary" @click="wizard.goNext()">
+          Next →
+        </UiButton>
+      </template>
     </div>
   </div>
 </template>
