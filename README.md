@@ -3,8 +3,8 @@
 A playful Vue 3 wizard that turns a 6-step guided flow into a copy-pasteable, well-structured **Lovable** prompt — with a live preview, presets, and a one-click **Build with Lovable** launcher.
 
 > Live URL: _add after first deploy_
->
-> Screenshot: _add after first deploy_
+
+<img width="1377" height="1112" alt="lovable-prompt-builder" src="https://github.com/user-attachments/assets/0639b246-1346-42ca-bec8-808b6ffe5eea" />
 
 ## How to use
 
