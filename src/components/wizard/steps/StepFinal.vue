@@ -49,7 +49,7 @@ function resetToDefault() {
       </UiButton>
     </div>
 
-    <div class="flex flex-col gap-3 sm:flex-row sm:gap-2">
+    <div class="flex flex-col gap-3 sm:flex-row sm:gap-2 md:hidden">
       <CopyButton />
       <DownloadButton />
       <BuildWithLovableButton />
