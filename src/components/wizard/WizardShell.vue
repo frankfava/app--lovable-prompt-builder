@@ -11,10 +11,10 @@ const ActiveStep = computed(() => stepRegistry[wizard.currentStep.id])
 </script>
 
 <template>
-  <div class="mx-auto flex h-full max-w-2xl flex-col gap-8 px-6 py-8 md:px-10 md:py-12">
+  <div class="mx-auto flex max-w-2xl flex-col gap-8 px-6 pt-8 pb-24 md:px-10 md:pt-12 md:pb-32">
     <StepProgress />
 
-    <div class="flex flex-1 flex-col gap-8">
+    <div class="flex flex-col gap-8">
       <component :is="ActiveStep" />
     </div>
 

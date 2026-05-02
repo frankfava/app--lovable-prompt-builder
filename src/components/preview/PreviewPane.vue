@@ -12,8 +12,6 @@ const renderedDisplay = computed(() =>
   renderPrompt(wizard.data, { stripMarkers: true })
 )
 
-const charCount = computed(() => renderedDisplay.value.length)
-
 const isEmptyShape = computed(() => {
   const b = wizard.data.basics
   return (
@@ -27,6 +25,10 @@ const isEmptyShape = computed(() => {
     wizard.data.features.features.length === 0
   )
 })
+
+const charCount = computed(() =>
+  isEmptyShape.value ? 0 : renderedDisplay.value.length
+)
 </script>
 
 <template>
