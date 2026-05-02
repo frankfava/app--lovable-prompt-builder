@@ -8,6 +8,7 @@ import UiCard from '../ui/UiCard.vue'
 const wizardStore = useWizardStore()
 const isOpen = ref(false)
 const selectedPresetId = ref<string | null>(null)
+const dismissable = ref(false)
 
 // One-shot flag: show picker only on first mount unless ?blank=1
 onMounted(() => {
@@ -16,6 +17,7 @@ onMounted(() => {
 
   if (!hasVisited && !blankParam) {
     isOpen.value = true
+    dismissable.value = false
     sessionStorage.setItem('preset-picker-shown', 'true')
   }
 })
@@ -30,13 +32,19 @@ function selectPreset(presetId: string) {
 }
 
 function startBlank() {
+  wizardStore.resetWizard()
+  isOpen.value = false
+}
+
+function dismiss() {
+  if (!dismissable.value) return
   isOpen.value = false
 }
 
 function reopenPicker() {
-  wizardStore.resetWizard()
   selectedPresetId.value = null
   isOpen.value = true
+  dismissable.value = true
 }
 
 defineExpose({
@@ -56,14 +64,24 @@ defineExpose({
       <div
         v-if="isOpen"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+        @click.self="dismiss"
       >
         <!-- Modal panel -->
         <div
-          class="w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl dark:bg-slate-900"
+          class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl dark:bg-slate-900"
         >
           <!-- Header -->
-          <div class="sticky top-0 border-b border-slate-200 bg-white px-6 py-6 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100">
-            <h2 class="text-3xl font-bold bg-lovable-gradient bg-clip-text text-transparent dark:bg-lovable-gradient-bright">
+          <div class="sticky top-0 z-10 border-b border-slate-200 bg-white px-6 py-6 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100">
+            <button
+              v-if="dismissable"
+              type="button"
+              @click="dismiss"
+              class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200"
+              aria-label="Close template picker"
+            >
+              ✕
+            </button>
+            <h2 class="text-3xl font-bold bg-lovable-gradient bg-clip-text text-transparent dark:bg-lovable-gradient-bright pr-12">
               Pick a starter template
             </h2>
             <p class="mt-2 text-slate-600 dark:text-slate-400">
@@ -120,7 +138,7 @@ defineExpose({
             >
               Use this template
             </UiButton>
-            <div v-else class="text-sm text-slate-500 dark:text-slate-400">
+            <div v-else class="hidden text-sm text-slate-500 sm:block dark:text-slate-400">
               Select a template above
             </div>
           </div>

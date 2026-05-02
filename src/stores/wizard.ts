@@ -57,6 +57,7 @@ export const useWizardStore = defineStore('wizard', () => {
   const currentStepIndex = ref(0)
   const visited = reactive(new Set<StepId>(['basics']))
   const skipped = reactive(new Set<StepId>())
+  const dataResetTick = ref(0)
 
   const currentStep = computed(() => steps.value[currentStepIndex.value])
   const stepCount = computed(() => steps.value.length)
@@ -124,11 +125,13 @@ export const useWizardStore = defineStore('wizard', () => {
 
   function loadPreset(presetData: WizardData) {
     Object.assign(data, deepClone(presetData))
-    currentStepIndex.value = 1
+    currentStepIndex.value = 0
     visited.clear()
-    visited.add('basics')
-    visited.add('design')
+    for (const step of steps.value) {
+      visited.add(step.id)
+    }
     skipped.clear()
+    dataResetTick.value += 1
   }
 
   return {
@@ -137,6 +140,7 @@ export const useWizardStore = defineStore('wizard', () => {
     currentStepIndex,
     visited,
     skipped,
+    dataResetTick,
     currentStep,
     stepCount,
     isFirst,
