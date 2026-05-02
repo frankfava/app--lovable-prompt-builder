@@ -4,6 +4,7 @@ import AppHeader from './components/layout/AppHeader.vue'
 import SplitLayout from './components/layout/SplitLayout.vue'
 import WizardShell from './components/wizard/WizardShell.vue'
 import PreviewPane from './components/preview/PreviewPane.vue'
+import MobilePreviewSheet from './components/preview/MobilePreviewSheet.vue'
 import PresetPicker from './components/presets/PresetPicker.vue'
 
 const presetPickerRef = ref<InstanceType<typeof PresetPicker>>()
@@ -29,6 +30,7 @@ function openPresetPicker() {
       </template>
     </SplitLayout>
 
+    <MobilePreviewSheet />
     <PresetPicker ref="presetPickerRef" />
   </div>
 </template>

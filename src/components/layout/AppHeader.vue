@@ -25,16 +25,16 @@ defineEmits<{
     <div
       class="mx-auto flex w-full items-center justify-between gap-4 px-4 py-3 md:px-8"
     >
-      <a href="/" class="flex items-center gap-3 group">
+      <a href="/" class="flex min-w-0 items-center gap-3 group">
         <span
-          class="flex h-9 w-9 items-center justify-center rounded-2xl bg-lovable-gradient text-white text-lg shadow-lovable transition group-hover:rotate-3 dark:bg-lovable-gradient-muted"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-lovable-gradient text-white text-lg shadow-lovable transition group-hover:rotate-3 dark:bg-lovable-gradient-muted"
           aria-hidden="true"
         >
           ✨
         </span>
-        <span class="flex flex-col leading-tight">
+        <span class="flex min-w-0 flex-col leading-tight">
           <span
-            class="bg-lovable-gradient bg-clip-text text-lg font-extrabold text-transparent dark:bg-lovable-gradient-bright md:text-xl"
+            class="truncate bg-lovable-gradient bg-clip-text text-base font-extrabold text-transparent dark:bg-lovable-gradient-bright sm:text-lg md:text-xl"
           >
             Lovable Prompt Builder
           </span>
@@ -44,14 +44,14 @@ defineEmits<{
         </span>
       </a>
 
-      <nav class="flex items-center gap-2">
+      <nav class="flex shrink-0 items-center gap-2">
         <UiButton
           variant="secondary"
           size="sm"
           @click="$emit('open-preset-picker')"
-          class="hidden md:inline-flex"
         >
-          Use a template
+          <span class="md:hidden" aria-hidden="true">🎨</span>
+          <span class="sr-only md:not-sr-only">Use a template</span>
         </UiButton>
         <a
           v-if="repoUrl"
@@ -63,7 +63,7 @@ defineEmits<{
           GitHub
         </a>
         <span
-          class="inline-flex rounded-full border border-lovable-purple/30 bg-lovable-gradient-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-lovable-violet dark:border-lovable-pink/40 dark:text-lovable-pink"
+          class="hidden rounded-full border border-lovable-purple/30 bg-lovable-gradient-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-lovable-violet dark:border-lovable-pink/40 dark:text-lovable-pink sm:inline-flex"
         >
           v1
         </span>

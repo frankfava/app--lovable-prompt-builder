@@ -58,7 +58,7 @@ const charCount = computed(() =>
           Your prompt will appear here, looking spectacular.
         </p>
         <p class="mt-2 text-sm text-slate-400 dark:text-slate-500">
-          (Empty state. The wizard is shy. Talk to it on the left.)
+          (Empty state. Fill in the wizard to see it bloom.)
         </p>
       </div>
     </div>
